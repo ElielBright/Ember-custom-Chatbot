@@ -1,0 +1,176 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #FFEFBA, #FFFFFF);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #FFF5E1;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+    animation: slideIn 1s ease forwards;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 26px;
+    color: #D35400;
+    margin: 0;
+}
+
+header p {
+    font-size: 16px;
+    color: #A04000;
+    margin-top: 10px;
+}
+
+.chat-window {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message {
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+.chat-message:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-message {
+    background-color: #FFE4B5;
+    color: #8B0000;
+    padding: 12px;
+    border-radius: 12px 12px 12px 0;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.51);
+}
+
+.user-message {
+    background-color: #FFA07A;
+    color: #FFF;
+    padding: 12px;
+    border-radius: 12px 12px 0 12px;
+    max-width: 80%;
+    margin-left: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.51);
+}
+
+
+form {
+    display: flex;
+    margin-top: 20px;
+    border-top: 2px solid #FFD700;
+    padding-top: 15px;
+}
+
+form input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid #FFD700;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+form input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    border-color: #FFD700;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+
+form button {
+    background-color: #D35400;
+    color: #FFF;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+    background-color: #A04000;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+form button:active {
+    transform: translateY(0);
+}
+
+.typing-indicator {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #ffa07a;
+    animation: bounce 1s infinite alternate;
+    margin-right: 5px;
+    
+}
+
+.typing-indicator:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
